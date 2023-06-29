@@ -2,7 +2,7 @@
     <mat-card-content>
         <mat-card-title>APPLE DISPLAY</mat-card-title>
         <mat-card-subtitle>GOOD APPLES</mat-card-subtitle>
-        <mat-card *ngFor="let apple of goodApples">
+        <mat-card *ngFor="let apple of goodApples$ | async">
             <mat-card-content>ID: {{apple.id}}</mat-card-content>
             <mat-card-content>COLOR: {{apple.color}}</mat-card-content>
             <mat-card-content>SIZE (CM): {{apple.sizeCm}}</mat-card-content>
@@ -14,7 +14,7 @@
             </mat-card-actions>
         </mat-card>
         <mat-card-subtitle>BAD APPLES</mat-card-subtitle>
-        <mat-card *ngFor="let apple of badApples">
+        <mat-card *ngFor="let apple of badApples$ | async">
             <mat-card-content>ID: {{apple.id}}</mat-card-content>
             <mat-card-content>COLOR: {{apple.color}}</mat-card-content>
             <mat-card-content>SIZE (CM): {{apple.sizeCm}}</mat-card-content>
