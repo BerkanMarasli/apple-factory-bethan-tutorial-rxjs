@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, shareReplay } from 'rxjs';
+import { Observable, map, shareReplay } from 'rxjs';
 import { Apple } from '../interfaces/apple.interface';
 
 @Injectable({
@@ -17,5 +17,9 @@ export class ApplesService {
       }),
       shareReplay()
     );
+  }
+
+  editApple(appleId: number, changes: Partial<Apple>): Observable<any> {
+    return this.http.put(`/api/apples/${appleId}}`, changes)
   }
 }
